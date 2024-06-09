@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mui/material";
 
-const JobPostTable = ({ jobPosts, onEdit }) => {
+const JobPostTable = ({ jobPosts, onEdit, handleDuplicate }) => {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -35,6 +35,14 @@ const JobPostTable = ({ jobPosts, onEdit }) => {
                   onClick={() => onEdit(index)}
                 >
                   Edit
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleDuplicate(index)}
+                  sx={{ ml: "1rem" }}
+                >
+                  Duplicate
                 </Button>
               </TableCell>
             </TableRow>
